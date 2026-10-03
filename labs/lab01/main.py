@@ -12,10 +12,10 @@ lastName = input("What is your Last Name:")
 print(" My name is ", yourName, lastName,"!")
 print("My Major is Data Science")
 
-num1 = input("Enter a number from 0-100:")
+num1 = int(input("Enter a number from 0-100:"))
 print("You entered", num1 )
 
-num2 = input("Enter a number from 10-1000:")
+num2 = int(input("Enter a number from 10-1000:"))
 print("You entered", num2 )
 
-print("24*2024 = ", 24*2024 )
+print(num1, "X", num2, "=", num1*num2)
