@@ -1,5 +1,5 @@
-Jaylynn Williams
-CS 31 10/7/2026
+print("Jaylynn Williams")
+print("CS 31 10/7/2026")
 print()
 print("My Amazing Naruto Quiz")
 print()
