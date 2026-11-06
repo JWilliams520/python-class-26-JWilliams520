@@ -2,7 +2,7 @@
 # Include your course number, student first and last name, and date in the comment header
 J Williams CS 31 Oct 28 2026
 
-import nameformat
+import nameformat.py
 nameformat.hello_world()
 
 def main():
@@ -31,7 +31,8 @@ elif choice == "2":
 elif choice == "3":
   name.format.lastNameFirst(firstName, lastName)
 elif choice == 4:
-  print("Documentaion Placeholder")
+  print("Documentaion")
+  nameformat.documentation()
 elif choice == 5:
   print("Thank you for using our program.")
   break
@@ -41,7 +42,8 @@ else:
 
 if __name__ == "__main__":
   main()
-  
+
+
 
   
 
