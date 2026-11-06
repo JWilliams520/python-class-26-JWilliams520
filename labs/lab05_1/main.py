@@ -25,14 +25,17 @@ while True:
 # if else block baseed on choice input 
 if choice == "1" :
   # call sayHello
-  name.format.sayHello(firstName)
+  nameformat.sayHello(firstName)
 elif choice == "2":
-  name.format.fullName(firstName, lastName)
+  nameformat.fullName(firstName, lastName)
 elif choice == "3":
   name.format.lastNameFirst(firstName, lastName)
 elif choice == 4:
   print("Documentaion")
-  nameformat.documentation()
+  help(nameformat.sayhello)
+  help(nameformat.fullName)
+  help(nameformat.lastNameFirst)
+  #nameformat.documentation()
 elif choice == 5:
   print("Thank you for using our program.")
   break
