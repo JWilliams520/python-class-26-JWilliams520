@@ -47,12 +47,4 @@ if __name__ == "__main__":
 
 
 
-def sayHello(firstName):
-  print()
 
-
-def fullName(firstName,lastName):
-  print()
-
-def lastNameFirst(firstName,lastName):
-  print()
