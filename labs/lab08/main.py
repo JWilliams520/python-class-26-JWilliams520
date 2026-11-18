@@ -31,7 +31,7 @@ while choice == "y":
     subtotal = order_total - discount
     shipping_percent = Decimal('.085')
     shipping_cost= subtotal*shipping_percent
-    shipping_cost= shipping_cost.quanitize(Decimal("1.00"),ROUND_HALF_UP)
+    shipping_cost= shipping_cost.quantize(Decimal("1.00"),ROUND_HALF_UP)
     print("shipping_cost")
     tax_percent = Decimal(".05")
     sales_tax = subtotal * tax_percent
