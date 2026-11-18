@@ -3,6 +3,7 @@
 
 from decimal import Decimal
 from decimal import ROUND_HALF_UP
+import locale as lc 
 
 # display a title
 print("The Invoice program")
@@ -28,17 +29,36 @@ while choice == "y":
     discount = order_total * discount_percent
     discount = discount.quantize(Decimal("1.00"), ROUND_HALF_UP)                                
     subtotal = order_total - discount
+    shipping_percent = Decimal('.085')
+    shipping_cost= subtotal*shipping_percent
+    shipping_cost= shipping_cost.quanitize(Decimal("1.00"),ROUND_HALF_UP)
+    print("shipping_cost")
     tax_percent = Decimal(".05")
     sales_tax = subtotal * tax_percent
     sales_tax = sales_tax.quantize(Decimal("1.00"), ROUND_HALF_UP)                                 
-    invoice_total = subtotal + sales_tax
+    invoice_total = subtotal + sales_tax + shipping_cost
+    # add shipping cost
+    shipping_percent = Decimal('.2')
+    print("shipping_cost:")
+
+    # add the spec format value 
+    spec = "10",
+    spec_currency = ">10"
+    spec_litearl = 20
+
+    # work with locale
+    lc.setlocale(lc.LC_ALL, "en_US.UTF-8")# us locale for wimdows 
+    order_totl = lc.currency(order_total,grouping=True)
+    invoice_total = lc.currency(invoice_total,grouping=True)
+
 
     # display the results
-    print(f"Order total:        {order_total:10,}")
-    print(f"Discount amount:    {discount:10,}")
-    print(f"Subtotal:           {subtotal:10,}")
-    print(f"Sales tax:          {sales_tax:10,}")
-    print(f"Invoice total:      {invoice_total:10,}")
+    print(f"{'Order total:':{spec_litearl}}{order_total:{spec_currency}}")
+    print(f"{'Discount amount:':{spec_litearl}}{discount:{spec}}")
+    print(f"{'Subtotal:':{spec_litearl}}{subtotal:{spec}}")
+    print(f"{'Shipping cost:':{spec_litearl}}{shipping_cost:{spec}}")
+    print(f"{'Sales tax:':{spec_litearl}}{sales_tax:{spec}}")
+    print(f"{'Invoice total:':{spec_currency}}{invoice_total:{spec_currency}}")
     print()
 
     choice = input("Continue? (y/n): ")    
